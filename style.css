@@ -5,43 +5,35 @@
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-}
-
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
 .caixa {
-    width: 25%;
-    max-width: 90%;
-    background: white;
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 15px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    gap: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.5s ease;
 }
 
 .titulo {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: bold;
     text-align: center;
     color: #333;
 }
 
 form {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -50,56 +42,62 @@ form {
 .group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
 }
 
 label {
-    font-size: 0.9rem;
-    color: #555;
+    font-size: 0.85rem;
+    color: #666;
 }
 
 input {
     height: 45px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: 0.3s;
+    padding: 0 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
     font-size: 0.95rem;
+    transition: all 0.25s ease;
+    background: #f9f9f9;
 }
 
 input:focus {
-    border-color: #4facfe;
+    border-color: #667eea;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
     outline: none;
-    box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
 }
 
 input[type="file"] {
-    padding: 5px;
+    padding: 8px;
     height: auto;
+    background: #fff;
 }
 
 button {
     height: 45px;
     border: none;
-    border-radius: 8px;
-    background: #4facfe;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.25s ease;
 }
 
 button:hover {
-    background: #00c6ff;
-    transform: scale(1.03);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }
 
 span {
-    align-self: center;
+    font-size: 0.85rem;
+    color: #ff4d4d;
+    text-align: center;
 }
 
 .invisivel {
@@ -108,38 +106,58 @@ span {
 
 .erro {
     border-color: #ff4d4d;
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+    background: #fff5f5;
+    box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.2);
 }
 
 .cards {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
 .card {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid black;
-    padding: 10px;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 
-    "card1 card2";
-    gap: 10px;
+    grid-template-columns: 100px 1fr;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    background: #fdfdfd;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 .card1 {
+    width: 100%;
+    height: 100px;
     border-radius: 10px;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .card2 {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    gap: 5px;
+}
+
+.card2 .titulo {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
